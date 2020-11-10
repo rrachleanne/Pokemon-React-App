@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom'
+import Pokemon from './components/Pokemon'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//1. App with heading
+//2. Route to pokemon component
+//3. include :id
+const App = () =>{
+    return (
+        <div>
+            <h1>Pokemon Application</h1>
+            <BrowserRouter>
+            <Route path="/pokemon/:id" component={Pokemon}/>
+            </BrowserRouter>
+        </div>
+    )
 }
 
-export default App;
+export default App
